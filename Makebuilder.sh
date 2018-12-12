@@ -72,20 +72,20 @@ INCDIR = includes
 
 FLAGS = -Wall -Werror -Wextra
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re cleanlib fcleanlib relib
 
 all: \$(NAME)
 
-\$(NAME): \$(OBJ)"
+\$(NAME): \$(OBJ) \$(LIB)"
 
 case $comp_type in
-	1) echo "	gcc $(FLAGS) $(OBJ) $(LIB) -o $(NAME)";;
+	1) echo "	gcc \$(FLAGS) \$(OBJ) \$(LIB) -o \$(NAME)";;
  	2) echo "	ar -rcs \$(NAME) \$(OBJ)";;
  	*) echo "	!Write your compilation instructions here!";;
 esac
 
 echo "
-$(LIB):
+\$(LIB):
 	make -C libft all
 	
 \$(OBJDIR)/%.o: ./%.c \$(INCDIR)/*.h | \$(OBJDIR)
@@ -100,4 +100,13 @@ clean:
 fclean: clean
 	rm -f \$(NAME)
 
-re: fclean all"
+re: fclean all
+
+cleanlib:
+	make -C libft clean
+
+fcleanlib:
+	make -C libft fclean
+
+relib:
+	make -C libft re"
