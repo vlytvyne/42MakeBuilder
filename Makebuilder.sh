@@ -80,7 +80,7 @@ all: \$(NAME)
 
 case $comp_type in
 	1) echo "	gcc \$(FLAGS) \$(OBJ) \$(LIB) -o \$(NAME)";;
- 	2) echo "	ar -rcs \$(NAME) \$(OBJ)";;
+ 	2) echo "	ar -rcs \$(NAME) \$(OBJ) \$(LIB)";;
  	*) echo "	!Write your compilation instructions here!";;
 esac
 
