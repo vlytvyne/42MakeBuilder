@@ -20,9 +20,9 @@ echo "#    Makefile                                           :+:      :+:    :+
 echo "#                                                     +:+ +:+         +:+      #"
 
 printf "#    By: "
-printf $USER
+printf "%8s" $USER
 printf " <"
-printf $USER
+printf "%8s" $USER
 echo "@student.unit.ua>        +#+  +:+       +#+         #"
 
 echo "#                                                 +#+#+#+#+#+   +#+            #"
@@ -31,13 +31,13 @@ printf "#    Created: "
 date +"%Y/%m/%d %H:%M:%S" | tr -d '\n'
 
 printf " by "
-printf $USER
+printf "%8s" $USER
 echo "          #+#    #+#              #"
 
 printf "#    Updated: "
 date +"%Y/%m/%d %H:%M:%S" | tr -d '\n'
 printf " by "
-printf $USER
+printf "%8s" $USER
 echo "         ###   ########.fr        #"
 echo "#                                                                              #"
 echo "# **************************************************************************** #"
